@@ -1,60 +1,81 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marriage Album</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Marriage Album</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-    }body {
-  background: #fffafc;
-  padding: 2rem;
-}
+    }
 
-h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #d6336c;
-}
+    body {
+      background: #fffafc;
+      padding: 2rem;
+    }
 
-.album {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #d6336c;
+    }
 
-.photo {
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+    .album {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.photo:hover {
-  transform: scale(1.03);
-}
+    .photo {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transform: scale(1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
 
-.photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    .photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
 
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .photo img:hover {
+      transform: scale(1.02);
+    }
   </style>
-</head><body>
+</head>
+<body>
   <h1>Our Marriage Album</h1>
   <div class="album">
-    <div class="photo"><img src="IMG-20250323-WA0049.jpg" alt="Wedding 1"></div>
-    <div class="photo"><img src="IMG-20250412-WA0030.jpg" alt="Wedding 2"></div>
-    <div class="photo"><img src="DJI_20250115142736_0050_D.JPG" alt="Wedding 3"></div>
-    <div class="photo"><img src="IMG-20250329-WA0020.jpg" alt="Wedding 4"></div>
-    <div class="photo"><img src="https://source.unsplash.com/400x300/?wedding,couple" alt="Wedding 5"></div>
-    <div class="photo"><img src="IMG-20250330-WA0072.jpg" alt="Wedding 6"></div>
+    <div class="photo" data-aos="fade-up"><img src="IMG-20250323-WA0049.jpg" alt="Wedding 1"></div>
+    <div class="photo" data-aos="fade-up" data-aos-delay="100"><img src="IMG-20250412-WA0030.jpg" alt="Wedding 2"></div>
+    <div class="photo" data-aos="fade-up" data-aos-delay="200"><img src="DJI_20250115142736_0050_D.JPG" alt="Wedding 3"></div>
+    <div class="photo" data-aos="fade-up" data-aos-delay="300"><img src="IMG-20250329-WA0020.jpg" alt="Wedding 4"></div>
+    <div class="photo" data-aos="fade-up" data-aos-delay="400"><img src="https://source.unsplash.com/400x300/?wedding,couple" alt="Wedding 5"></div>
+    <div class="photo" data-aos="fade-up" data-aos-delay="500"><img src="IMG-20250330-WA0072.jpg" alt="Wedding 6"></div>
   </div>
-</body></html>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+</body>
+</html>
