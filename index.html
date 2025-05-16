@@ -143,30 +143,28 @@
       audio.play();
     }, { once: true });
   </script>
-  <audio id="bgAudio" src="kannathil muthamittal bgm 🎶 __ whatsapp status Tamil.mp3" autoplay></audio>
-  <audio src="kannathil muthamittal bgm 🎶 __ whatsapp status Tamil.mp3" autoplay="autoplay" loop="loop"></audio>
+
+
 </head>
 <body>
-  <audio id="bgAudio" src="kannathil muthamittal bgm 🎶 __ whatsapp status Tamil.mp3"></audio>
+  <!-- <audio id="bgAudio" src="kannathil muthamittal bgm 🎶 __ whatsapp status Tamil.mp3"></audio> -->
+
+  <audio id="bgAudio" src="kannathil muthamittal bgm 🎶 __ whatsapp status Tamil.mp3" autoplay="autoplay" loop="loop"></audio>
 
   <script>
-    // Wait for the first user interaction
-    function playAudio() {
+    function playAudioOnScroll() {
       const audio = document.getElementById("bgAudio");
       audio.play().then(() => {
-        console.log("Audio playing...");
+        console.log("Audio playing on scroll");
       }).catch(err => {
-        console.log("Audio play failed: ", err);
+        console.log("Playback failed:", err);
       });
 
-      // Remove the event listener after first play
-      document.removeEventListener("click", playAudio);
-      document.removeEventListener("touchstart", playAudio);
+      // Remove the scroll listener after playing
+      window.removeEventListener("scroll", playAudioOnScroll);
     }
 
-    // Add listeners
-    document.addEventListener("click", playAudio);
-    document.addEventListener("touchstart", playAudio);
+    window.addEventListener("scroll", playAudioOnScroll, { once: true });
   </script>
   <div class="image-container">
     <img style="transform: rotate(180deg); height: 110px;" src="photos/image0.png" alt="Wedding 1">
